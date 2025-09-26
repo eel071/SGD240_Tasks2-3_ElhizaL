@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 17392826}
   - component: {fileID: 17392825}
   - component: {fileID: 17392824}
+  - component: {fileID: 17392829}
+  - component: {fileID: 17392828}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -228,6 +230,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &17392828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17392823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f721219b36bdb4a9e13d52cdc0ec3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: Change Channel
+  _InteractionType: 0
+  _Duration: 0
+  MaxSimultaneousUsers: 1
+--- !u!114 &17392829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17392823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af08ab63cfaccbd48806d86fe2a92fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: TV
 --- !u!1 &110390046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1077,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1500285467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1500285469}
+  - component: {fileID: 1500285468}
+  m_Layer: 0
+  m_Name: Smart Object Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1500285468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500285467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe49d57009e2c54daa6d3220744cf5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1500285469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500285467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1616435669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,6 +1343,8 @@ GameObject:
   - component: {fileID: 1937103595}
   - component: {fileID: 1937103594}
   - component: {fileID: 1937103593}
+  - component: {fileID: 1937103598}
+  - component: {fileID: 1937103597}
   m_Layer: 0
   m_Name: Bookshelf
   m_TagString: Untagged
@@ -1361,6 +1438,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1937103597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937103592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f721219b36bdb4a9e13d52cdc0ec3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: Read
+  _InteractionType: 1
+  _Duration: 5
+  MaxSimultaneousUsers: 2
+--- !u!114 &1937103598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937103592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af08ab63cfaccbd48806d86fe2a92fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: Bookshelf
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1377,3 +1483,4 @@ SceneRoots:
   - {fileID: 1923094106}
   - {fileID: 879755159}
   - {fileID: 1313935180}
+  - {fileID: 1500285469}
