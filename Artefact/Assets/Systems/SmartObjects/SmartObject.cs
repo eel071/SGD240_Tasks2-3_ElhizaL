@@ -5,7 +5,11 @@ using UnityEngine;
 public class SmartObject : MonoBehaviour
 {
     [SerializeField] protected string _DisplayName;
+    [SerializeField] protected Transform _InteractionMarker;
+    
     protected List<BaseInteraction> CachedInterations = null;
+    
+    public Vector3 InteractionPoint => _InteractionMarker != null ? _InteractionMarker.position : transform.position;
 
     public string DisplayName => _DisplayName;
     public List<BaseInteraction> Interactions

@@ -36,8 +36,6 @@ public class SmartObjectManager : MonoBehaviour
     public void RegisterSmartObject(SmartObject toRegister)
     {
         RegisteredObjects.Add(toRegister);
-
-        Debug.Log(toRegister.DisplayName);
     }
 
     public void DeregisterSmartObject(SmartObject toDeregister)
