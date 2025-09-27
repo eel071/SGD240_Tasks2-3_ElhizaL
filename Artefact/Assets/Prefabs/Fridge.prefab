@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1455349907941917167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2348481316960115188}
+  m_Layer: 0
+  m_Name: Interaction Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2348481316960115188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455349907941917167}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.25, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3512706871158535373}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5720570916302142443
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +43,8 @@ GameObject:
   - component: {fileID: 8019116879809153696}
   - component: {fileID: 51796624281053609}
   - component: {fileID: 8988983659528078398}
+  - component: {fileID: 5300408969755775795}
+  - component: {fileID: 5269854083901706608}
   m_Layer: 0
   m_Name: Fridge
   m_TagString: Untagged
@@ -31,7 +64,8 @@ Transform:
   m_LocalPosition: {x: 3.46, y: 1.25, z: 4.99}
   m_LocalScale: {x: 1.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2348481316960115188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8019116879809153696
@@ -105,3 +139,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5300408969755775795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5720570916302142443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af08ab63cfaccbd48806d86fe2a92fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: Fridge
+  _InteractionMarker: {fileID: 2348481316960115188}
+--- !u!114 &5269854083901706608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5720570916302142443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f721219b36bdb4a9e13d52cdc0ec3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: Eat
+  _InteractionType: 1
+  _Duration: 3
+  MaxSimultaneousUsers: 1

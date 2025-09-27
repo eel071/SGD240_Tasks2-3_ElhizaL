@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5258911095127497289}
   - component: {fileID: 5018560362067670106}
   - component: {fileID: 4841550873010439139}
+  - component: {fileID: 5391028001417740894}
+  - component: {fileID: 1550883709179369062}
   m_Layer: 0
   m_Name: Toilet
   m_TagString: Untagged
@@ -31,7 +33,8 @@ Transform:
   m_LocalPosition: {x: 4, y: 0.5, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 9020168312494762971}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5258911095127497289
@@ -105,3 +108,64 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5391028001417740894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453929163166307411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af08ab63cfaccbd48806d86fe2a92fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: Toilet
+  _InteractionMarker: {fileID: 9020168312494762971}
+--- !u!114 &1550883709179369062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453929163166307411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f721219b36bdb4a9e13d52cdc0ec3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: Pee
+  _InteractionType: 1
+  _Duration: 2
+  MaxSimultaneousUsers: 1
+--- !u!1 &8055262027163147892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9020168312494762971}
+  m_Layer: 0
+  m_Name: Interaction Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9020168312494762971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055262027163147892}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3371992798739000477}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

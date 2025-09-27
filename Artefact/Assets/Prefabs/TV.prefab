@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4722459322191115016}
   - component: {fileID: 6405698703145154035}
   - component: {fileID: 1620224389563835915}
-  - component: {fileID: 619730188768710559}
-  - component: {fileID: 5306690538337620460}
+  - component: {fileID: 6263757150965529587}
+  - component: {fileID: 1331073513905918412}
+  - component: {fileID: 4183227754135913645}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -108,7 +109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &619730188768710559
+--- !u!114 &6263757150965529587
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,12 +118,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2424437018201956078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af08ab63cfaccbd48806d86fe2a92fdc, type: 3}
+  m_Script: {fileID: 11500000, guid: b28c36c24b4a7b3419253c895642ff88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _DisplayName: TV
   _InteractionMarker: {fileID: 1872084612718022360}
---- !u!114 &5306690538337620460
+--- !u!114 &1331073513905918412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +132,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2424437018201956078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48f721219b36bdb4a9e13d52cdc0ec3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66ea61112be72274a9a30ff88e3b3302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: Toggle Power
+  _InteractionType: 0
+  _Duration: 0
+  MaxSimultaneousUsers: 1
+--- !u!114 &4183227754135913645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424437018201956078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448f826e842a2ea44a2ca9efdc2535ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _DisplayName: Change Channel
