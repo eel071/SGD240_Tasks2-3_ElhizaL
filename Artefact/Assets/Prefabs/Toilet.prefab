@@ -137,6 +137,9 @@ MonoBehaviour:
   _DisplayName: Pee
   _InteractionType: 1
   _Duration: 2
+  _StatChanges:
+  - Target: 2
+    Value: 0.5
   MaxSimultaneousUsers: 1
 --- !u!1 &8055262027163147892
 GameObject:

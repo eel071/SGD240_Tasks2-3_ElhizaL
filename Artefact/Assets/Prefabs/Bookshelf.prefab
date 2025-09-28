@@ -168,4 +168,7 @@ MonoBehaviour:
   _DisplayName: Read
   _InteractionType: 1
   _Duration: 5
+  StatChanges:
+  - Target: 3
+    Value: 0.2
   MaxSimultaneousUsers: 2

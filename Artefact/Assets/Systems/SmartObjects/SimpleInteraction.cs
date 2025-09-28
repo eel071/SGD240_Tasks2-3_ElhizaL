@@ -7,6 +7,7 @@ public class SimpleInteraction : BaseInteraction
 {
     protected class PerformerInfo
     {
+        public CommonAIBase PerformingAI;
         public float ElapsedTime;
         public UnityAction<BaseInteraction> OnCompleted;
     }
@@ -32,7 +33,7 @@ public class SimpleInteraction : BaseInteraction
 
     }
 
-    public override void Perform(MonoBehaviour performer, UnityAction<BaseInteraction> onCompleted)
+    public override void Perform(CommonAIBase performer, UnityAction<BaseInteraction> onCompleted)
     {
         if (NumCurrentUsers <= 0)
         {
@@ -43,11 +44,15 @@ public class SimpleInteraction : BaseInteraction
         //check the interaction type
         if (InteractionType == EInteractionType.Instantaneous)
         {
+            if (StatChanges.Length > 0) 
+            {
+                ApplyStatChanges(performer, 1f);
+            }
             onCompleted.Invoke(this);           
         }
         else if (InteractionType == EInteractionType.OverTime)
         {
-            CurrentPerformers.Add(new PerformerInfo () { ElapsedTime = 0, OnCompleted = onCompleted });
+            CurrentPerformers.Add(new PerformerInfo () { PerformingAI = performer, ElapsedTime = 0, OnCompleted = onCompleted });
         }
     }
 
@@ -68,8 +73,14 @@ public class SimpleInteraction : BaseInteraction
         {
             PerformerInfo performer = CurrentPerformers[index];
 
-            performer.ElapsedTime += Time.deltaTime;
-            
+            float previousElapsedTime = performer.ElapsedTime;
+            performer.ElapsedTime = Mathf.Min(performer.ElapsedTime + Time.deltaTime, _Duration);
+
+            if (StatChanges.Length > 0)
+            {
+                ApplyStatChanges(performer.PerformingAI, (performer.ElapsedTime - previousElapsedTime) / _Duration);
+            }
+
             //interaction complete?
             if (performer.ElapsedTime >= _Duration)
             {

@@ -168,4 +168,7 @@ MonoBehaviour:
   _DisplayName: Eat
   _InteractionType: 1
   _Duration: 3
+  _StatChanges:
+  - Target: 0
+    Value: 0.35
   MaxSimultaneousUsers: 1

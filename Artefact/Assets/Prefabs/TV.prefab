@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6263757150965529587}
   - component: {fileID: 1331073513905918412}
   - component: {fileID: 4183227754135913645}
+  - component: {fileID: -2534438931238852503}
   m_Layer: 0
   m_Name: TV
   m_TagString: Untagged
@@ -138,6 +139,7 @@ MonoBehaviour:
   _DisplayName: Toggle Power
   _InteractionType: 0
   _Duration: 0
+  _StatChanges: []
   MaxSimultaneousUsers: 1
 --- !u!114 &4183227754135913645
 MonoBehaviour:
@@ -154,6 +156,26 @@ MonoBehaviour:
   _DisplayName: Change Channel
   _InteractionType: 0
   _Duration: 0
+  _StatChanges: []
+  MaxSimultaneousUsers: 1
+--- !u!114 &-2534438931238852503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424437018201956078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff47515d8c02ff74a97771e4d7bbd732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: Watch TV
+  _InteractionType: 1
+  _Duration: 5
+  _StatChanges:
+  - Target: 3
+    Value: 0.25
   MaxSimultaneousUsers: 1
 --- !u!1 &3381634159204454011
 GameObject:

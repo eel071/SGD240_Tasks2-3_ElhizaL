@@ -168,4 +168,7 @@ MonoBehaviour:
   _DisplayName: Rest
   _InteractionType: 1
   _Duration: 5
+  _StatChanges:
+  - Target: 1
+    Value: 0.5
   MaxSimultaneousUsers: 1
