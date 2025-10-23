@@ -13,6 +13,9 @@ public enum EStat
 [RequireComponent(typeof(BaseNavigation))]
 public class CommonAIBase : MonoBehaviour
 {
+    [Header("General")]
+    [SerializeField] int HouseholdID = 1;
+
     [Header("Hunger")]
     [SerializeField] float InitialHungerLevel = 0.5f;
     [SerializeField] float BaseHungerDecayRate = 0.005f;
