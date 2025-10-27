@@ -5,7 +5,11 @@ using UnityEngine;
 
 public enum EBlackboardKey
 {
-    
+    Character_Stat_Hunger,
+    Character_Stat_Energy,
+    Character_Stat_Bladder,
+    Character_Stat_Fun,
+    Character_FocusObject
 }
 public class Blackboard
 {
@@ -184,7 +188,7 @@ public class BlackboardManager : MonoBehaviour
 {
     public static BlackboardManager Instance { get; private set; } = null;
 
-    Dictionary<GameObject, Blackboard> IndividualBlackboards = new Dictionary<GameObject, Blackboard>();
+    Dictionary<MonoBehaviour, Blackboard> IndividualBlackboards = new Dictionary<MonoBehaviour, Blackboard>();
     Dictionary<int, Blackboard> SharedBlackboards = new Dictionary<int, Blackboard>();
 
     private void Awake()
@@ -199,7 +203,7 @@ public class BlackboardManager : MonoBehaviour
         Instance = this;
     }
 
-    public Blackboard GetIndividualBlackboard(GameObject requestor)
+    public Blackboard GetIndividualBlackboard(MonoBehaviour requestor)
     {
         if (!IndividualBlackboards.ContainsKey(requestor))
         {

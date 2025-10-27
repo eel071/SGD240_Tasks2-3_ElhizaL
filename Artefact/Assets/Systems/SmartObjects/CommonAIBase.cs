@@ -42,25 +42,42 @@ public class CommonAIBase : MonoBehaviour
 
     protected bool StartedPerforming = false;
 
-    public float CurrentHunger { get; protected set; }
-    public float CurrentEnergy { get; protected set; }
-    public float CurrentBladder { get; protected set; }
-    public float CurrentFun { get; protected set; }
+    public float CurrentHunger
+    {
+        get { return IndividualBlackboard.GetFloat(EBlackboardKey.Character_Stat_Hunger); }
+        set { IndividualBlackboard.Set(EBlackboardKey.Character_Stat_Hunger, value); }
+    }
+    public float CurrentEnergy
+    {
+        get { return IndividualBlackboard.GetFloat(EBlackboardKey.Character_Stat_Energy); }
+        set { IndividualBlackboard.Set(EBlackboardKey.Character_Stat_Energy, value); }
+    }
+    public float CurrentBladder
+    {
+        get { return IndividualBlackboard.GetFloat(EBlackboardKey.Character_Stat_Bladder); }
+        set { IndividualBlackboard.Set(EBlackboardKey.Character_Stat_Bladder, value); }
+    }
+    public float CurrentFun
+    {
+        get { return IndividualBlackboard.GetFloat(EBlackboardKey.Character_Stat_Fun); }
+        set { IndividualBlackboard.Set(EBlackboardKey.Character_Stat_Fun, value); }
+    }
 
+    public Blackboard IndividualBlackboard { get; protected set; }
 
     protected virtual void Awake()
+    {      
+        Navigation = GetComponent<BaseNavigation>();
+    }
+
+    // Start is called before the first frame update
+    protected virtual void Start()
     {
+        IndividualBlackboard = BlackboardManager.Instance.GetIndividualBlackboard(this);
         HungerDisplay.value = CurrentHunger = InitialHungerLevel;
         EnergyDisplay.value = CurrentEnergy = InitialEnergyLevel;
         BladderDisplay.value = CurrentBladder = InitialBladderLevel;
         FunDisplay.value = CurrentFun = InitialFunLevel;
-
-        Navigation = GetComponent<BaseNavigation>();
-    }
-    // Start is called before the first frame update
-    protected virtual void Start()
-    {
-
     }
 
     // Update is called once per frame
