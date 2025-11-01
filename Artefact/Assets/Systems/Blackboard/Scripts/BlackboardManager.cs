@@ -9,7 +9,9 @@ public enum EBlackboardKey
     Character_Stat_Energy,
     Character_Stat_Bladder,
     Character_Stat_Fun,
-    Character_FocusObject
+    Character_FocusObject,
+
+    Household_ObjectsInUse
 }
 public class Blackboard
 {
@@ -33,7 +35,7 @@ public class Blackboard
 
         return (T)GenericValues[key];
     }
-    public bool TryGet<T>(EBlackboardKey key, out T value, T defaultValue)
+    public bool TryGetGeneric<T>(EBlackboardKey key, out T value, T defaultValue)
     {
         if (GenericValues.ContainsKey(key))
         {

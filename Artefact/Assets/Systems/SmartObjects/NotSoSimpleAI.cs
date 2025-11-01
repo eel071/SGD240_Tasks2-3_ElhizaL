@@ -10,6 +10,7 @@ public class NotSoSimpleAI : CommonAIBase
     [SerializeField] protected float PickInteractionInterval = 2f;
     [SerializeField] protected float DefaultInteractionScore = 0f;
     [SerializeField] protected int InteractionPickSize = 5;
+    [SerializeField] bool AvoidInUseObjects = true;
 
     protected float TimeUntilNextInteractionPicked = -1f;
 
@@ -78,6 +79,9 @@ public class NotSoSimpleAI : CommonAIBase
 
     void PickBestInteraction()
     {
+        List<GameObject> objectsInUse = null;
+        HouseholdBlackboard.TryGetGeneric(EBlackboardKey.Household_ObjectsInUse, out objectsInUse, null);
+
         //loop through all objects
         List<ScoredInteraction> unsortedInteractions = new List<ScoredInteraction>();
         foreach(var smartObject in SmartObjectManager.Instance.RegisteredObjects)
@@ -86,6 +90,9 @@ public class NotSoSimpleAI : CommonAIBase
             foreach(var interaction in smartObject.Interactions)
             {
                 if (!interaction.CanPerform()) { continue; }
+
+                //skip if someone else is using
+                if (AvoidInUseObjects && objectsInUse != null && objectsInUse.Contains(interaction.gameObject)) { continue; }                
 
                 float score = ScoreInteraction(interaction);
 

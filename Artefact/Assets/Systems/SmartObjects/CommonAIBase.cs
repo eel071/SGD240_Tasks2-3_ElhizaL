@@ -38,7 +38,52 @@ public class CommonAIBase : MonoBehaviour
 
     protected BaseNavigation Navigation;
 
-    protected BaseInteraction CurrentInteraction = null;
+    protected BaseInteraction CurrentInteraction
+    {
+        get 
+        { 
+            BaseInteraction interaction = null;
+            IndividualBlackboard.TryGetGeneric(EBlackboardKey.Character_FocusObject, out interaction, null);
+            return interaction; 
+        }
+        set 
+        {
+            BaseInteraction prevInteraction = null;
+            IndividualBlackboard.TryGetGeneric(EBlackboardKey.Character_FocusObject, out prevInteraction, null);
+            
+            IndividualBlackboard.SetGeneric(EBlackboardKey.Character_FocusObject, value);
+            
+            List<GameObject> objectsInUse = null;
+            HouseholdBlackboard.TryGetGeneric(EBlackboardKey.Household_ObjectsInUse, out objectsInUse, null);
+
+            //are we starting to use something?
+            if (value != null)
+            {
+                //need to create a list?
+                if (objectsInUse == null)
+                {
+                    objectsInUse = new List<GameObject>();
+                }
+
+                // not already in list? add and update blackboard
+                if (!objectsInUse.Contains(value.gameObject))
+                {
+                    objectsInUse.Add(value.gameObject);
+                    HouseholdBlackboard.SetGeneric(EBlackboardKey.Household_ObjectsInUse, objectsInUse);
+                }
+            }
+            //we've stopped using something
+            else if (objectsInUse != null)
+            {
+                //attempt to remove and update blackboard if changed
+                if (objectsInUse.Remove(prevInteraction.gameObject))
+                {
+                    HouseholdBlackboard.SetGeneric(EBlackboardKey.Household_ObjectsInUse, objectsInUse);
+                }
+            }
+            
+        }
+    }
 
     protected bool StartedPerforming = false;
 
@@ -64,6 +109,7 @@ public class CommonAIBase : MonoBehaviour
     }
 
     public Blackboard IndividualBlackboard { get; protected set; }
+    public Blackboard HouseholdBlackboard { get; protected set; }
 
     protected virtual void Awake()
     {      
@@ -73,7 +119,9 @@ public class CommonAIBase : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        HouseholdBlackboard = BlackboardManager.Instance.GetSharedBlackboard(HouseholdID);
         IndividualBlackboard = BlackboardManager.Instance.GetIndividualBlackboard(this);
+
         HungerDisplay.value = CurrentHunger = InitialHungerLevel;
         EnergyDisplay.value = CurrentEnergy = InitialEnergyLevel;
         BladderDisplay.value = CurrentBladder = InitialBladderLevel;
