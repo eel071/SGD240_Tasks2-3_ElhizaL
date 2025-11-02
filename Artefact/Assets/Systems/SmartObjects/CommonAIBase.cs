@@ -157,7 +157,7 @@ public class CommonAIBase : MonoBehaviour
 
     protected virtual void OnInteractionFinished(BaseInteraction interaction)
     {
-        interaction.UnlockInteraction();
+        interaction.UnlockInteraction(this);
         CurrentInteraction = null;
         Debug.Log($"Finished {interaction.DisplayName}");
     }

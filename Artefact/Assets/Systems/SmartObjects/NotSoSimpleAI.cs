@@ -112,7 +112,7 @@ public class NotSoSimpleAI : CommonAIBase
         var selectedInteraction = sortedInteractions[selectedIndex].Interaction;
 
         CurrentInteraction = selectedInteraction;
-        CurrentInteraction.LockInteraction();
+        CurrentInteraction.LockInteraction(this);
         StartedPerforming = false;
 
         //move to the target

@@ -13,9 +13,9 @@ public class TVInteraction_TogglePower : SimpleInteraction
         LinkedTV = GetComponent<SmartObjectTV>();
     }
 
-    public override void Perform(CommonAIBase performer, UnityAction<BaseInteraction> onCompleted)
+    public override bool Perform(CommonAIBase performer, UnityAction<BaseInteraction> onCompleted)
     {
         LinkedTV.ToggleState();
-        base.Perform(performer, onCompleted);
+        return base.Perform(performer, onCompleted);
     }
 }
