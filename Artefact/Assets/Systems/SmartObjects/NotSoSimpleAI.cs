@@ -67,7 +67,7 @@ public class NotSoSimpleAI : CommonAIBase
 
         //return value through an equation to get the utility score
         //to be further complicated at a later date (this is where curves and such would be put in)
-        return (1f - currentValue) * amount;
+        return (1f - currentValue) * ApplyTraitsTo(target, Trait.ETargetType.Score, amount);
     }
 
     class ScoredInteraction

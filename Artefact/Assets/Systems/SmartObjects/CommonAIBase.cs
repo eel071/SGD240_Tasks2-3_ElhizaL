@@ -36,6 +36,9 @@ public class CommonAIBase : MonoBehaviour
     [SerializeField] float BaseFunDecayRate = 0.005f;
     [SerializeField] UnityEngine.UI.Slider FunDisplay;
 
+    [Header("Traits")]
+    [SerializeField] protected List<Trait> Traits;
+
     protected BaseNavigation Navigation;
 
     protected BaseInteraction CurrentInteraction
@@ -128,6 +131,16 @@ public class CommonAIBase : MonoBehaviour
         FunDisplay.value = CurrentFun = InitialFunLevel;
     }
 
+    protected float ApplyTraitsTo(EStat targetStat, Trait.ETargetType targetType, float currentValue)
+    {
+        foreach(var trait in Traits)
+        {
+            currentValue = trait.Apply(targetStat, targetType, currentValue);
+        }
+
+        return currentValue;
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {
@@ -140,17 +153,17 @@ public class CommonAIBase : MonoBehaviour
             }
 
         }        
-
-        CurrentHunger = Mathf.Clamp01(CurrentHunger - BaseHungerDecayRate * Time.deltaTime);
+                
+        CurrentHunger = Mathf.Clamp01(CurrentHunger - ApplyTraitsTo(EStat.Hunger, Trait.ETargetType.DecayRate, BaseHungerDecayRate) * Time.deltaTime);
         HungerDisplay.value = CurrentHunger;
 
-        CurrentEnergy = Mathf.Clamp01(CurrentEnergy - BaseEnergyDecayRate * Time.deltaTime);
+        CurrentEnergy = Mathf.Clamp01(CurrentEnergy - ApplyTraitsTo(EStat.Energy, Trait.ETargetType.DecayRate, BaseEnergyDecayRate) * Time.deltaTime);
         EnergyDisplay.value = CurrentEnergy;
 
-        CurrentBladder = Mathf.Clamp01(CurrentBladder - BaseBladderDecayRate * Time.deltaTime);
+        CurrentBladder = Mathf.Clamp01(CurrentBladder - ApplyTraitsTo(EStat.Bladder, Trait.ETargetType.DecayRate, BaseBladderDecayRate) * Time.deltaTime);
         BladderDisplay.value = CurrentBladder;
 
-        CurrentFun = Mathf.Clamp01(CurrentFun - BaseFunDecayRate * Time.deltaTime);
+        CurrentFun = Mathf.Clamp01(CurrentFun - ApplyTraitsTo(EStat.Fun, Trait.ETargetType.DecayRate, BaseFunDecayRate) * Time.deltaTime);
         FunDisplay.value = CurrentFun;
 
     }
@@ -164,12 +177,14 @@ public class CommonAIBase : MonoBehaviour
 
     public void UpdateIndividualStat(EStat target, float amount)
     {
-        switch(target)
+        float adjustedAmount = ApplyTraitsTo(target, Trait.ETargetType.Impact, amount);
+
+        switch (target)
         {
-            case EStat.Hunger: CurrentHunger += amount; break;
-            case EStat.Energy: CurrentEnergy += amount; break;
-            case EStat.Bladder: CurrentBladder += amount; break;
-            case EStat.Fun: CurrentFun += amount; break;
+            case EStat.Hunger: CurrentHunger = Mathf.Clamp01(CurrentHunger + adjustedAmount); break;
+            case EStat.Energy: CurrentEnergy = Mathf.Clamp01(CurrentEnergy + adjustedAmount); break;
+            case EStat.Bladder: CurrentBladder = Mathf.Clamp01(CurrentBladder + adjustedAmount); break;
+            case EStat.Fun: CurrentFun = Mathf.Clamp01(CurrentFun + adjustedAmount); break;
         }
     }
 }

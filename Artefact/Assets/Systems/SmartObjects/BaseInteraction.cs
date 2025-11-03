@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public enum EInteractionType
 {
@@ -23,7 +22,7 @@ public abstract class BaseInteraction : MonoBehaviour
     [SerializeField] protected string _DisplayName;
     [SerializeField] protected EInteractionType _InteractionType = EInteractionType.Instantaneous;
     [SerializeField] protected float _Duration = 0f;
-    [SerializeField, FormerlySerializedAs("StatChanges")] protected InteractionStatChange[] _StatChanges;
+    [SerializeField] protected InteractionStatChange[] _StatChanges;
 
     public string DisplayName => _DisplayName;
     public EInteractionType InteractionType => _InteractionType;

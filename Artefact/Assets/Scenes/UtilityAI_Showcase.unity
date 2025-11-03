@@ -860,10 +860,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Traits.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Traits.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6aaea9f611cd8d848bd8467467502d38, type: 2}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Traits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: a1ff47d65b860654bbd548cc5572aecc, type: 2}
     - target: {fileID: 3875626968289842461, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_Name
       value: Agent (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5382662649407142557, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9aaf09fc043d9a547abff8033a8fca23, type: 2}
     - target: {fileID: 6466654934536742793, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1094,6 +1110,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2096392393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2424437018201956078, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
+  m_PrefabInstance: {fileID: 5041749647076563254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2096392402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096392393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff47515d8c02ff74a97771e4d7bbd732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DisplayName: Workout Program
+  _InteractionType: 1
+  _Duration: 5
+  _StatChanges:
+  - Target: 3
+    Value: 0.2
+  - Target: 1
+    Value: -0.1
+  - Target: 0
+    Value: -0.1
+  MaxSimultaneousUsers: 2
 --- !u!1001 &217040978193778801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1216,6 +1260,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2534438931238852503, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
+      propertyPath: MaxSimultaneousUsers
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2424437018201956078, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
       propertyPath: m_Name
       value: TV
@@ -1260,10 +1308,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4183227754135913645, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
+      propertyPath: _StatChanges.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183227754135913645, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
+      propertyPath: _StatChanges.Array.data[0].Value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183227754135913645, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
+      propertyPath: _StatChanges.Array.data[0].Target
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2424437018201956078, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2096392402}
   m_SourcePrefab: {fileID: 100100000, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
 --- !u!1001 &5794013232183275972
 PrefabInstance:
@@ -1482,10 +1545,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Traits.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Traits.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b7a7017586502634f881159a57595848, type: 2}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Traits.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4cb4c4eaa872feb4eb8407931d3eb79f, type: 2}
     - target: {fileID: 3875626968289842461, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_Name
       value: Agent
       objectReference: {fileID: 0}
+    - target: {fileID: 5382662649407142557, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ea4b7259ba803d488120215cd51be03, type: 2}
     - target: {fileID: 6466654934536742793, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
