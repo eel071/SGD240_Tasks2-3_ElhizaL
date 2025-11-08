@@ -708,10 +708,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 260731321125747388, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 664667155972315937, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -872,6 +868,18 @@ PrefabInstance:
       propertyPath: Traits.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: a1ff47d65b860654bbd548cc5572aecc, type: 2}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[1].<OverrideDefaults>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[1].<Override_DecayRate>k__BackingField
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[1].<Override_InitialValue>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3875626968289842461, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_Name
       value: Agent (1)
@@ -1110,34 +1118,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2096392393 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2424437018201956078, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
-  m_PrefabInstance: {fileID: 5041749647076563254}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2096392402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096392393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff47515d8c02ff74a97771e4d7bbd732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _DisplayName: Workout Program
-  _InteractionType: 1
-  _Duration: 5
-  _StatChanges:
-  - Target: 3
-    Value: 0.2
-  - Target: 1
-    Value: -0.1
-  - Target: 0
-    Value: -0.1
-  MaxSimultaneousUsers: 2
 --- !u!1001 &217040978193778801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1189,6 +1169,10 @@ PrefabInstance:
     - target: {fileID: 5720570916302142443, guid: 5b0ebbce0a663ae4791e474c3acec0fa, type: 3}
       propertyPath: m_Name
       value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720570916302142443, guid: 5b0ebbce0a663ae4791e474c3acec0fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1246,6 +1230,10 @@ PrefabInstance:
     - target: {fileID: 7016167671545186041, guid: 0c72e28fc1bdd844b8b6e8bdb8f52cca, type: 3}
       propertyPath: m_Name
       value: Bed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016167671545186041, guid: 0c72e28fc1bdd844b8b6e8bdb8f52cca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1323,10 +1311,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2424437018201956078, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2096392402}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
 --- !u!1001 &5794013232183275972
 PrefabInstance:
@@ -1339,6 +1324,10 @@ PrefabInstance:
     - target: {fileID: 1453929163166307411, guid: 38be0b9bc5383284aac226d470527128, type: 3}
       propertyPath: m_Name
       value: Toilet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453929163166307411, guid: 38be0b9bc5383284aac226d470527128, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3371992798739000477, guid: 38be0b9bc5383284aac226d470527128, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1393,10 +1382,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 260731321125747388, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 664667155972315937, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1557,6 +1542,18 @@ PrefabInstance:
       propertyPath: Traits.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 4cb4c4eaa872feb4eb8407931d3eb79f, type: 2}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[2].<OverrideDefaults>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[2].<Override_DecayRate>k__BackingField
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[2].<Override_InitialValue>k__BackingField
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3875626968289842461, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_Name
       value: Agent
@@ -1697,6 +1694,10 @@ PrefabInstance:
     - target: {fileID: 7269150728840636258, guid: a1e7ff3f043dbae41a82573aaa771b72, type: 3}
       propertyPath: m_Name
       value: Bookshelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 7269150728840636258, guid: a1e7ff3f043dbae41a82573aaa771b72, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

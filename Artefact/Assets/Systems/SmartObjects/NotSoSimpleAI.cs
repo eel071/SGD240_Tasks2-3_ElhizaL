@@ -48,26 +48,19 @@ public class NotSoSimpleAI : CommonAIBase
 
         foreach(var change in interaction.StatChanges)
         {
-            score += ScoreChange(change.Target, change.Value);
+            score += ScoreChange(change.LinkedStat, change.Value);
         }
         return score;
     }
 
-    float ScoreChange(EStat target, float amount)
+    float ScoreChange(AIStat linkedStat, float amount)
     {
-        float currentValue = 0f;
+        float currentValue = GetStatValue(linkedStat);
         
-        switch (target)
-        {
-            case EStat.Hunger: currentValue = CurrentHunger; break;
-            case EStat.Energy: currentValue = CurrentEnergy; break;
-            case EStat.Bladder: currentValue = CurrentBladder; break;
-            case EStat.Fun: currentValue = CurrentFun; break;
-        }
 
         //return value through an equation to get the utility score
         //to be further complicated at a later date (this is where curves and such would be put in)
-        return (1f - currentValue) * ApplyTraitsTo(target, Trait.ETargetType.Score, amount);
+        return (1f - currentValue) * ApplyTraitsTo(linkedStat, Trait.ETargetType.Score, amount);
     }
 
     class ScoredInteraction

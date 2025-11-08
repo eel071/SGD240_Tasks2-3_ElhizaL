@@ -169,6 +169,6 @@ MonoBehaviour:
   _InteractionType: 1
   _Duration: 5
   _StatChanges:
-  - Target: 1
+  - LinkedStat: {fileID: 11400000, guid: 87a31039541fa6945970b04e06b3f6b1, type: 2}
     Value: 0.5
   MaxSimultaneousUsers: 1
