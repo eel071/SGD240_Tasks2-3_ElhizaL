@@ -9,7 +9,7 @@ public class NotSoSimpleAI : CommonAIBase
 {
     [SerializeField] protected float PickInteractionInterval = 2f;
     [SerializeField] protected float DefaultInteractionScore = 0f;
-    [SerializeField] protected int InteractionPickSize = 5;
+    [SerializeField] protected int InteractionPickSize = 2;
     [SerializeField] bool AvoidInUseObjects = true;
 
     protected float TimeUntilNextInteractionPicked = -1f;
@@ -52,17 +52,28 @@ public class NotSoSimpleAI : CommonAIBase
         }
         return score;
     }
-
+        
     float ScoreChange(AIStat linkedStat, float amount)
     {
         float currentValue = GetStatValue(linkedStat);
         
+        //return value through an equation to get the utility score  
+        //checking which level of Maslow's Hierarchy of Needs is the stat?
+        if (linkedStat.HierarchyLevel == 1 || linkedStat.HierarchyLevel == 2) //quadtratic curve
+        {                  
+            return (Mathf.Pow((currentValue / 1f), 0.5f)) * ApplyTraitsTo(linkedStat, Trait.ETargetType.Score, amount);
+        }        
+        else if (linkedStat.HierarchyLevel == 3) //logistic function
+        {
+            return (1 / (Mathf.Pow((1 + Mathf.Exp(1f)), -currentValue))) * ApplyTraitsTo(linkedStat, Trait.ETargetType.Score, amount);
+        }
+        else //4 or higher, linear curve
+        {
+            return (currentValue / 1f) * ApplyTraitsTo(linkedStat, Trait.ETargetType.Score, amount);
+        }
 
-        //return value through an equation to get the utility score
-        //to be further complicated at a later date (this is where curves and such would be put in)
-        return (1f - currentValue) * ApplyTraitsTo(linkedStat, Trait.ETargetType.Score, amount);
     }
-
+   
     class ScoredInteraction
     {
         public SmartObject TargetObject;
@@ -96,8 +107,9 @@ public class NotSoSimpleAI : CommonAIBase
         if (unsortedInteractions.Count == 0) { return; }
         
         //sort and pick from list of best interactions
-        var sortedInteractions = unsortedInteractions.OrderByDescending(scoredInteractions => scoredInteractions.Score).ToList();
+        var sortedInteractions = unsortedInteractions.OrderBy(scoredInteractions => scoredInteractions.Score).ToList();
         int maxIndex = Mathf.Min(InteractionPickSize, sortedInteractions.Count);
+
 
         var selectedIndex = Random.Range(0, maxIndex);
 

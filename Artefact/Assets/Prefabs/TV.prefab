@@ -202,7 +202,7 @@ MonoBehaviour:
     Value: -0.1
   - LinkedStat: {fileID: 11400000, guid: 513074267fb0792469f22904b1550745, type: 2}
     Value: -0.1
-  MaxSimultaneousUsers: 2
+  MaxSimultaneousUsers: 1
 --- !u!1 &3381634159204454011
 GameObject:
   m_ObjectHideFlags: 0

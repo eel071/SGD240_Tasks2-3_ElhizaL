@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Fun Chaser
   Impacts:
-  - Stat: 3
-    Scoring_PositiveScale: 1
+  - LinkedStat: {fileID: 11400000, guid: dcb44e3ff9ae3444dbdb952483d90e56, type: 2}
+    Scoring_PositiveScale: 0.5
     Scoring_NegativeScale: 1.5
     Impact_PositiveScale: 1
-    Impact_NegativeScale: 1
+    Impact_NegativeScale: 1.5
     DecayRateScale: 1.5

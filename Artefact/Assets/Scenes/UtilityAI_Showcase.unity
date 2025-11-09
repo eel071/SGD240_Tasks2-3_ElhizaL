@@ -857,6 +857,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: Traits.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -869,7 +873,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a1ff47d65b860654bbd548cc5572aecc, type: 2}
     - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[4].<LinkedStat>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 33efe008b58ab7049be799f14681b574, type: 2}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: Stats.Array.data[1].<OverrideDefaults>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[3].<OverrideDefaults>k__BackingField
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
@@ -877,12 +889,28 @@ PrefabInstance:
       value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[3].<Override_DecayRate>k__BackingField
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: Stats.Array.data[1].<Override_InitialValue>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[3].<Override_InitialValue>k__BackingField
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[2].<Override_HierarchyLevel>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[4].<Override_HierarchyLevel>k__BackingField
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3875626968289842461, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_Name
-      value: Agent (1)
+      value: Agent WellRested Glutton
       objectReference: {fileID: 0}
     - target: {fileID: 5382662649407142557, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1170,10 +1198,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge
       objectReference: {fileID: 0}
-    - target: {fileID: 5720570916302142443, guid: 5b0ebbce0a663ae4791e474c3acec0fa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1231,10 +1255,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bed
       objectReference: {fileID: 0}
-    - target: {fileID: 7016167671545186041, guid: 0c72e28fc1bdd844b8b6e8bdb8f52cca, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1248,10 +1268,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -2534438931238852503, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
-      propertyPath: MaxSimultaneousUsers
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2424437018201956078, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
       propertyPath: m_Name
       value: TV
@@ -1296,18 +1312,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4183227754135913645, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
-      propertyPath: _StatChanges.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183227754135913645, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
-      propertyPath: _StatChanges.Array.data[0].Value
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4183227754135913645, guid: 1c432f865f190134b82dc12bff839c21, type: 3}
-      propertyPath: _StatChanges.Array.data[0].Target
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1324,10 +1328,6 @@ PrefabInstance:
     - target: {fileID: 1453929163166307411, guid: 38be0b9bc5383284aac226d470527128, type: 3}
       propertyPath: m_Name
       value: Toilet
-      objectReference: {fileID: 0}
-    - target: {fileID: 1453929163166307411, guid: 38be0b9bc5383284aac226d470527128, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3371992798739000477, guid: 38be0b9bc5383284aac226d470527128, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1531,6 +1531,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: Traits.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1541,22 +1545,46 @@ PrefabInstance:
     - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: Traits.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 4cb4c4eaa872feb4eb8407931d3eb79f, type: 2}
+      objectReference: {fileID: 11400000, guid: 8fe09f6fc2d3d534eb775764552cbdf8, type: 2}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[4].<LinkedStat>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 33efe008b58ab7049be799f14681b574, type: 2}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[1].<OverrideDefaults>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: Stats.Array.data[2].<OverrideDefaults>k__BackingField
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[1].<Override_DecayRate>k__BackingField
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: Stats.Array.data[2].<Override_DecayRate>k__BackingField
       value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[1].<Override_InitialValue>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: Stats.Array.data[2].<Override_InitialValue>k__BackingField
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[2].<Override_HierarchyLevel>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735384025578374879, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
+      propertyPath: Stats.Array.data[4].<Override_HierarchyLevel>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3875626968289842461, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_Name
-      value: Agent
+      value: Agent FunChaser SmallApp
       objectReference: {fileID: 0}
     - target: {fileID: 5382662649407142557, guid: 600af6bf0029cec469263dcea5ae368c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1694,10 +1722,6 @@ PrefabInstance:
     - target: {fileID: 7269150728840636258, guid: a1e7ff3f043dbae41a82573aaa771b72, type: 3}
       propertyPath: m_Name
       value: Bookshelf
-      objectReference: {fileID: 0}
-    - target: {fileID: 7269150728840636258, guid: a1e7ff3f043dbae41a82573aaa771b72, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

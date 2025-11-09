@@ -9,6 +9,7 @@ public class AIStatConfiguration
     [field: SerializeField] public bool OverrideDefaults { get; private set; } = false;
     [field: SerializeField, Range(0f, 1f)] public float Override_InitialValue { get; protected set; } = 0.5f;
     [field: SerializeField, Range(0f, 1f)] public float Override_DecayRate { get; protected set; } = 0.005f;
+    [field: SerializeField, Range(1, 5)] public int Override_HierarchyLevel { get; protected set; } = 1;
 }
 
 [RequireComponent(typeof(BaseNavigation))]
@@ -97,7 +98,8 @@ public class CommonAIBase : MonoBehaviour
             var linkedStat = statConfig.LinkedStat;
             float initialValue = statConfig.OverrideDefaults ? statConfig.Override_InitialValue : statConfig.LinkedStat.InitialValue;
             float decayRate = statConfig.OverrideDefaults ? statConfig.Override_DecayRate : statConfig.LinkedStat.DecayRate;
-            
+            int hierarchyLevel = statConfig.OverrideDefaults ? statConfig.Override_HierarchyLevel : statConfig.LinkedStat.HierarchyLevel;
+
             DecayRates[linkedStat] = decayRate;
             IndividualBlackboard.SetStat(linkedStat, initialValue);
             

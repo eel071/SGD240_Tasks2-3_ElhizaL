@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 911716e45f8a6f346ad9ef6368da218e, type: 3}
-  m_Name: Active
+  m_Name: Well Rested
   m_EditorClassIdentifier: 
-  DisplayName: Active
+  DisplayName: Well Rested
   Impacts:
-  - Stat: 1
+  - LinkedStat: {fileID: 11400000, guid: 87a31039541fa6945970b04e06b3f6b1, type: 2}
     Scoring_PositiveScale: 1.5
-    Scoring_NegativeScale: 0.8
-    Impact_PositiveScale: 1
+    Scoring_NegativeScale: 0.5
+    Impact_PositiveScale: 1.5
     Impact_NegativeScale: 1
-    DecayRateScale: 1
+    DecayRateScale: 0.5

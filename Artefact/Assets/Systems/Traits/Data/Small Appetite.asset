@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 911716e45f8a6f346ad9ef6368da218e, type: 3}
-  m_Name: Insomnia
+  m_Name: Small Appetite
   m_EditorClassIdentifier: 
-  DisplayName: Insomnia
+  DisplayName: Small Appetite
   Impacts:
-  - Stat: 1
+  - LinkedStat: {fileID: 11400000, guid: 513074267fb0792469f22904b1550745, type: 2}
     Scoring_PositiveScale: 1.5
     Scoring_NegativeScale: 0.5
-    Impact_PositiveScale: 0.8
+    Impact_PositiveScale: 1.5
     Impact_NegativeScale: 1
-    DecayRateScale: 0.75
+    DecayRateScale: 0.8

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Glutton
   Impacts:
-  - Stat: 0
-    Scoring_PositiveScale: 1
-    Scoring_NegativeScale: 1.2
+  - LinkedStat: {fileID: 11400000, guid: 513074267fb0792469f22904b1550745, type: 2}
+    Scoring_PositiveScale: 0.5
+    Scoring_NegativeScale: 1.5
     Impact_PositiveScale: 1
-    Impact_NegativeScale: 1
+    Impact_NegativeScale: 1.5
     DecayRateScale: 1.5

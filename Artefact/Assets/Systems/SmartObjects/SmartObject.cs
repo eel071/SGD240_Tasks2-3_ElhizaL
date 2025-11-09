@@ -10,6 +10,7 @@ public class SmartObject : MonoBehaviour
     protected List<BaseInteraction> CachedInterations = null;
     
     public Vector3 InteractionPoint => _InteractionMarker != null ? _InteractionMarker.position : transform.position;
+    
 
     public string DisplayName => _DisplayName;
     public List<BaseInteraction> Interactions
